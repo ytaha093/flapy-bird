@@ -5,14 +5,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.addEventListener("keydown", (e) => {
         if (!e.repeat) {
-            velocity = 13
+            velocity = velocity < -16 ? (velocity < -20 ? 11 : 12) : 13
+            console.log(velocity)
         }
     })
 
     start()
     setInterval(updateBird, 20)
-    setInterval(makePipe, 1170)
-    setInterval(updatePipes, 25)
+    setInterval(makePipe, 1220)
+    setInterval(updatePipes, 28)
     
     function start() {
         bird = document.querySelector("#bird")
@@ -40,8 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
     function spreadPipes(topPipe, botPipe) {
         document.body.appendChild(topPipe);
         document.body.appendChild(botPipe);
-        //let betterRandom = test = test2 = test3 = test5 = "wtf???"
-        let random = Math.max(Math.min(Math.random(), 0.68), 0.07)
+        //let oldRandom = Math.max(Math.min(Math.random(), 0.68), 0.07)
+        let random = (Math.random() * 0.65) + 0.05
         let groundHeight = document.querySelector("#ground").offsetHeight
         let totalPipeArea = document.body.offsetHeight - groundHeight
         let topPipeHeight = (totalPipeArea * random)
