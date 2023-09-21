@@ -1,6 +1,6 @@
 # flapy-bird
 
-TODO:
+TODO:  
 add sounds  
 add score  
 add game over screen  
