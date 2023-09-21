@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("keydown", (e) => {
         if (!e.repeat) {
             velocity = velocity < -16 ? (velocity < -20 ? 11 : 12) : 13
-            console.log(velocity)
         }
     })
 
@@ -18,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function start() {
         bird = document.querySelector("#bird")
         ground = document.querySelector("#ground")
-        velocity = 2
+        velocity = 6
     }
     
     function updateBird() {
@@ -62,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
         pipes.forEach( (pipe) => {
             let incriment = document.body.offsetWidth/170
             pipe.style.left = (pipe.offsetLeft - incriment) + "px"
-            if (pipe.offsetLeft < -50) {
+            if (pipe.offsetLeft < -90) {
                 pipe.remove()
             }
             if (isCollide(pipe, bird)) {
