@@ -5,7 +5,6 @@ add sounds
 add score  
 add game over screen  
 add proper reset  
-
 make everything scale with window size
 - pipe move speed
 - pipe width
